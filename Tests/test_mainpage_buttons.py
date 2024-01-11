@@ -1,11 +1,5 @@
-from selenium.webdriver.common.by import By
 import time
-from selenium import webdriver
 import pytest
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import random
-
 from test_setup.webdriver_setup import se
 from Pages.mainpage import Mainpage
 
