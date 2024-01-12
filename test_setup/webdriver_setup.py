@@ -17,7 +17,7 @@ def se(request):
     driver.maximize_window()
     baseurl = "https://salata.com/"
     driver.get(baseurl)
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(10)
 
 
     yield driver

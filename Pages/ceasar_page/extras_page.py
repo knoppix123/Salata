@@ -12,10 +12,13 @@ class Extrasselection:
         self.driver = driver
 
     avocado = (By.XPATH, "(//*[contains(text(),' Avocado')])[2]")
+    artichoke = (By.XPATH, "//*[contains(text(),' Artichoke ')]")
     next_button = (By.XPATH, "(//*[contains(text(),'Next')])")
 
 
     def get_avocado(self):
         return self.driver.find_element(*Extrasselection.avocado)
+    def get_artichoke(self):
+        return self.driver.find_element(*Extrasselection.artichoke)
     def get_next_button(self):
         return self.driver.find_element(*Extrasselection.next_button)

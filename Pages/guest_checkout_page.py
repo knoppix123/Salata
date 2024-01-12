@@ -25,7 +25,7 @@ class Guestcheckout:
     expiration_cc_field = (By.CSS_SELECTOR, "[id='cardexp']")
     zipzode = (By.CSS_SELECTOR, "[id='cardzip']")
     # tip_10 = (By.XPATH, "//*[@class='col']//*[contains(text(),'10%')]")
-    tip_10 = (By.XPATH, "(//*[@class='col']//*[@class='btn-outline-dark btn-sm btn'])[2]")
+    tip_10 = (By.XPATH, "(//*[@class='col']//*[@class='btn-outline-dark btn-sm btn'])[4]")
 
     complete_order_button =(By.XPATH, "(//*[contains(text(),'COMPLETE ORDER')])[2]")
 
