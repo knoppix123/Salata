@@ -80,6 +80,16 @@ def Randomdressing(DR):
     dressing_selection_choise = random.choice(dressing_selection_list)
     return dressing_selection_choise()
 
+def Fillout_delivery_information(IP,MP):
+    IP.get_address_field().send_keys("7333 Avalon BLVD")
+    IP.get_city_field().send_keys("Alpharetta")
+    IP.get_zip_field().send_keys("30009")
+    IP.get_phone_field().send_keys("1231231231")
+    MP.driver.execute_script("arguments[0].value = 'your_text_here';", IP.get_special_instructions_field())
+    IP.get_submit_button().click()
+    MP.driver.execute_script("arguments[0].click();", IP.get_submit_button())
+    time.sleep(1)
+
 
 
 

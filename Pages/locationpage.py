@@ -1,10 +1,5 @@
 
 from selenium.webdriver.common.by import By
-import time
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-
 
 
 class Localpage:
@@ -22,6 +17,16 @@ class Localpage:
     arrow_time_selection_button = (By.XPATH,"(//*[@class='button-group'])[2]")
     select_12_00_time = (By.CSS_SELECTOR, "[value='12:00']")
     order_now_button = (By.XPATH, "(//*[contains(text(),'ORDER NOW')])[3]")
+    sign_in_button = (By.CSS_SELECTOR, "[class='find-location sign-in clickable']")
+    username_field = (By.CSS_SELECTOR, "[id='username']")
+    password_field = (By.CSS_SELECTOR, "[id='password']")
+    login_button = (By.XPATH, "//span[contains(text(),'SIGN IN')]")
+    account_name = (By.CSS_SELECTOR, "[class='view-accounts']")
+    invalid_login_message = (By.XPATH, "//*[contains(text(),'Incorrect email or password. Please try again')]")
+
+
+
+
 
 
 
@@ -44,4 +49,17 @@ class Localpage:
         return self.driver.find_element(*Localpage.order_now_button)
     def get_google_notification(self):
         return self.driver.find_element(*Localpage.google_notification)
+    def get_signin_button(self):
+        return self.driver.find_element(*Localpage.sign_in_button)
+    def get_username_field(self):
+        return self.driver.find_element(*Localpage.username_field)
+    def get_password_field(self):
+        return self.driver.find_element(*Localpage.password_field)
+    def get_login_button(self):
+        return self.driver.find_element(*Localpage.login_button)
+    def get_account_name(self):
+        return self.driver.find_element(*Localpage.account_name)
+    def get_invalid_ogin_message(self):
+        return self.driver.find_element(*Localpage.invalid_login_message)
+
 

@@ -18,6 +18,7 @@ def mainpage_instance(se):
     TP = Toppicsselection(se)
     DR = Dressing(se)
 
+
     accept_cookies = MP.get_accept_cookies_button()
     accept_cookies.click()
     return MP, LP, MPG, CS, PS, BP,ES, PK, CO, GCO, SSH, SP, TP,DR
