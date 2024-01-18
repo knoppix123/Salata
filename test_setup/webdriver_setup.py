@@ -16,9 +16,9 @@ def se(request):
 
     driver.maximize_window()
     baseurl = "https://salata.com/"
+    # baseurl = "https://www.headspin.io/blog/selenium-testing-a-complete-guide"
     driver.get(baseurl)
     driver.implicitly_wait(10)
-
 
     yield driver
     driver.quit()

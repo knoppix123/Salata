@@ -12,12 +12,13 @@ class Breadselection:
         self.driver = driver
 
     croissant = (By.XPATH, "//*[contains(text(),' Croissant ')]")
+    wheat = (By.XPATH, "//*[contains(text(),' Wheat' )]")
+    cool_cucumber = (By.XPATH, "//*[contains(text(),' Cool Cucumber' )]")
     next_button = (By.XPATH, "(//*[contains(text(),'Next')])")
-
-
-
 
     def get_croissant(self):
         return self.driver.find_element(*Breadselection.croissant)
+    def get_cool_cucumber(self):
+        return self.driver.find_element(*Breadselection.cool_cucumber)
     def get_next_button(self):
         return self.driver.find_element(*Breadselection.next_button)

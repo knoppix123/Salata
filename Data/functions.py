@@ -1,22 +1,8 @@
 from datetime import date
 import random
 import time
-import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-
-from test_setup.webdriver_setup import se
-from Pages.mainpage import Mainpage
-from Pages.locationpage import Localpage
-from Pages.salad_selection_page import Saladselection
-from Pages.ceasar_page.Ceasar_type_page import Ceasarselection
-from Pages.ceasar_page.protein_page import Proteinselection
-from Pages.ceasar_page.bread_page import Breadselection
-from Pages.ceasar_page.extras_page import Extrasselection
-from Pages.ceasar_page.plastic_kits import Plastickit
-from Pages.check_out_page import Checkout
-from Pages.guest_checkout_page import Guestcheckout
 
 
 def print_today_date():
@@ -31,28 +17,27 @@ def print_today_date():
 def place_order(MP,LP,order_date):
     menu_button = MP.get_find_my_salata_button()
     menu_button.click()
-    time.sleep(6)
+    # time.sleep(6)
     LP.get_seachfield().clear()
     LP.get_seachfield().send_keys("30009")
     time.sleep(1)
     LP.get_seach_button().click()
-    time.sleep(2)
+    time.sleep(1)
     LP.get_liberty_store().click()
-    time.sleep(3)
+    time.sleep(1)
+    LP.get_arrow_date_selection_button().click()
     LP.get_arrow_date_selection_button().click()
     time.sleep(1)
     LP.get_arrow_date_selection_button().click()
     time.sleep(1)
-    LP.get_arrow_date_selection_button().click()
-    time.sleep(3)
     LP.get_order_date(order_date).click()
     time.sleep(1)
     LP.get_arrow_time_selection_button().click()
-    time.sleep(2)
+    # time.sleep(2)
     LP.get_select_12_00_time().click()
-    time.sleep(2)
+    # time.sleep(2)
     LP.get_google_notification().click()
-    time.sleep(1)
+    # time.sleep(1)
     LP.get_order_now_button().click()
     time.sleep(2)
 
@@ -82,4 +67,21 @@ def finish_order(MPG,CO,GCO,MP):
     # GCO.get_tip_10().click()
     GCO.get_complete_order_button().click()
     time.sleep(3)
+
+def Randomtoppinc(TP):
+    toppings_selection_list = [TP.get_tomato,TP.get_cucumber, TP.get_carrots,TP.get_bell_peppers, TP.get_mushroom, TP.get_broccoli,TP.get_radish,TP.get_bean_sprouts,
+                               TP.get_red_onion,TP.get_edamame,TP.get_sun_dried_tomatoes, TP.get_olives_green,TP.get_green_peas,TP.get_jalapeno,TP.get_beets,
+                               TP.get_chick_peas,TP.get_black_beans]
+    toppings_selection_choise = random.choice(toppings_selection_list)
+    return  toppings_selection_choise()
+
+def Randomdressing(DR):
+    dressing_selection_list = [DR.get_fresh_herb_vinagrette, DR.get_lemon_vinagrette, DR.get_jalapeno_avocado,DR.get_buttermilk_ranch, DR.get_fat_free_tomato, DR.get_honey_mustard,DR.get_ginger_lime,DR.get_chipotle_ranch, DR.get_balsamic_vinagrette, DR.get_lemon_juice, DR.get_fat_free_mango, DR.get_classic_caesar,DR.get_olive_oil, DR.get_balsamic_vinegar,DR.get_oil_and_vinegar]
+    dressing_selection_choise = random.choice(dressing_selection_list)
+    return dressing_selection_choise()
+
+
+
+
+
 
