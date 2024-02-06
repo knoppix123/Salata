@@ -16,6 +16,7 @@ from Pages.components.protein_page import Proteinselection
 from Pages.components.bread_page import Breadselection
 from Pages.components.extras_page import Extrasselection
 from Pages.components.plastic_kits import Plastickit
+from Pages.deliveries_pages.group_order_page import Grouporder
 from Pages.components.base_selection_page import Selectionbase
 from Pages.components.toppics_page import Toppicsselection
 from Pages.check_out_page import Checkout

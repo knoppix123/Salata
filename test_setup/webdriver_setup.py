@@ -11,12 +11,15 @@ from selenium.webdriver.support import expected_conditions as EC
 def se(request):
 
 
-    # driver = webdriver.Chrome()
     driver = webdriver.Chrome()
+    # options = webdriver.ChromeOptions()
+    # options.add_argument("--enable-javascript")
+    # driver = webdriver.Chrome(options=options)
 
     driver.maximize_window()
     baseurl = "https://salata.com/"
-    # baseurl = "https://www.headspin.io/blog/selenium-testing-a-complete-guide"
+    # baseurl = "https://www.guidestar.org/"
+
     driver.get(baseurl)
     driver.implicitly_wait(10)
 
